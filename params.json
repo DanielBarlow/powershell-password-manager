@@ -1,0 +1,6 @@
+{
+  "name": "Powershell-password-manager",
+  "tagline": "",
+  "body": "#Powershell Password Manager\r\n###Scripted by Daniel Barlow\r\n\r\n##Dependencies\r\n\r\n* install-package 7zip4powershell\r\n  * available in Chocolatey repository\r\n\r\n##Usage\r\n\r\nAdd-Secret *file*\r\n\r\nGet-Secret *file* *[secretId]*\r\n\r\n##Examples\r\n\r\n####Add password to file vault.txt[.7z] in present working directory\r\n\r\n`Add-Secret .\\vault.txt`\r\n\r\nResponse\r\n\r\n```\r\nPS > Add-Secret .\\vault.txt\r\nWhat will I call this secret?: Pentagon Login\r\nTell me your secrets...: ***********\r\nWhat is your encryption key?: *************\r\n7z Password: *******\r\nPS >\r\n```\r\n\r\nThe secret password is now encrypted in a text file, that is then compressed within an encrypted 7zip archive\r\n\r\n####Get password identified as 'Pentagon Login' from file vault.txt.7z in present working directory\r\n\r\n`Get-Secret .\\vault.txt.7z \"Pentagon Login\"`\r\n\r\nResponse\r\n\r\n```\r\nPS > get-Secret .\\vault.txt.7z \"Pentagon Login\"\r\n7z Password: *******\r\nWhat is your encryption key?: *************\r\nPS >\r\n```\r\n\r\nThe secret password is now copied to your clipboard",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
