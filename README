@@ -14,28 +14,34 @@ Get-Secret *file* *[secretId]*
 
 ##Examples
 
-####Add password to file vault.txt in present working directory
+####Add password to file vault.txt[.7z] in present working directory
 
 `Add-Secret .\vault.txt`
 
 Response
 
->PS > Add-Secret .\vault.txt
->What will I call this secret?: Pentagon Login
->Tell me your secrets...: ***********
->What is your encryption key?: *************
->7z Password: *******
->PS >
+```
+PS > Add-Secret .\vault.txt
+What will I call this secret?: Pentagon Login
+Tell me your secrets...: ***********
+What is your encryption key?: *************
+7z Password: *******
+PS >
+```
 
 The secret password is now encrypted in a text file, that is then compressed within an encrypted 7zip archive
 
-####Get password identified as 'Pentagon Login' from file vault.txt in present working directory
+####Get password identified as 'Pentagon Login' from file vault.txt.7z in present working directory
 
-`Get-Secret .\vault.txt "Pentagon Login"`
+`Get-Secret .\vault.txt.7z "Pentagon Login"`
 
->PS > get-Secret .\vault.txt.7z "Pentagon Login"
->7z Password: *******
->What is your encryption key?: *************
->PS > 
+Response
+
+```
+PS > get-Secret .\vault.txt.7z "Pentagon Login"
+7z Password: *******
+What is your encryption key?: *************
+PS >
+```
 
 The secret password is now copied to your clipboard
